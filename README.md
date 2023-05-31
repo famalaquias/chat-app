@@ -1,5 +1,7 @@
 <h1 align="center">💬 RealChat</h1>
 
+![chat](https://github.com/famalaquias/chat-app/assets/98343640/6d9ac502-8520-4808-bf87-1a60f1ecb466)
+
 
 ## :page_with_curl: Sobre
 
@@ -86,8 +88,16 @@ $ npm run dev
 # O terminal irá exibir o endereço local onde a aplicação está sendo executada. Basta digitar o mesmo endereço em seu navegador preferido. O endereço usado na criação do projeto foi este:
 
   http://localhost:3333/
+  
+  http://localhost:5173/
 ```
 
+
+## ⚙ Melhorias a se fazer no Projeto
+1. Adicionar o botão de sair na aplicação
+2. Alterar o usuário para offline
+3. Estruturar para conversa privada
+4. Autenticação com JWT
 
 ---
 
