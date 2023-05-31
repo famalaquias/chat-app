@@ -9,4 +9,6 @@ router.post('/login', userController.login);
 
 router.post('/register', userController.register);
 
+router.put('/update/:cpf', userController.updateOneStatus);
+
 module.exports = router;

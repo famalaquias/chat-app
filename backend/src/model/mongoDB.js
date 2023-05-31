@@ -37,10 +37,10 @@ async function getUserByCPF(cpf) {
 }
 
 async function getAllUsers() {
-  try {
+   try {
     await client.connect();
-    const collection = db.collection('users');
     const db = client.db(dbName);
+    const collection = db.collection('users');
     const users = await collection.find().toArray();
     return users;
   } catch (err) {
@@ -51,8 +51,26 @@ async function getAllUsers() {
   }
 }
 
+async function updateUserByStatus(cpf, status) {
+  try {
+    await client.connect();
+    const db = client.db(dbName);
+    const collection = db.collection('users');
+    const result = await collection.updateOne({ cpf: cpf }, { $set: { status: status } });
+    console.log('Usuário atualizado com sucesso!');
+    return result;
+  } catch (err) {
+    console.error('Erro ao atualizar usuário por CPF:', err);
+    throw err;
+  } finally {
+    client.close();
+  }
+}
+
+
 module.exports = {
   insertUser,
   getUserByCPF,
-  getAllUsers
+  getAllUsers,
+  updateUserByStatus
 };

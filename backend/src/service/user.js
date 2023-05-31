@@ -1,7 +1,7 @@
 const md5 = require('md5');
 const { errorsTypes } = require('../utils/errorsCatalog');
 const generateToken = require('../utils/generateToken');
-const { getUserByCPF, insertUser, getAllUsers } = require('../model/mongoDB');
+const { getUserByCPF, insertUser, getAllUsers, updateUserByStatus } = require('../model/mongoDB');
 const statusHttp = require('../utils/statusHttp');
 
 const login = async ({cpf, password}) => {
@@ -42,12 +42,19 @@ const getOne = async (cpf) => {
 };
 
 const getAllUser = async () => {
-  return await getAllUsers();
+  const result = await getAllUsers();
+  return result;
 };
+
+const updateOneStatus = async (cpf, status) => {
+  const result = await updateUserByStatus(cpf, status);
+  return result;
+}
   
 module.exports = {
   login,
   register,
   getAllUser,
   getOne,
+  updateOneStatus
 };

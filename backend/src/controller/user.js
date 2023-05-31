@@ -32,9 +32,17 @@ const getOne = async (req, res) => {
   }
 };
 
+const updateOneStatus = async (req, res) => {
+  const { cpf } = req.params;
+  const { status } = req.body;
+  const result = await userService.updateOneStatus(cpf, status);
+  res.status(statusHttp.OK).send(result);
+}
+
 module.exports = {
   login,
   register,
   getAllUser,
   getOne,
+  updateOneStatus
 };

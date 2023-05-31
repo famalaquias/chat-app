@@ -16,20 +16,19 @@ export function CreateUser() {
   const [userConfirm,  setUserConfirm] = useState(false);
 
   const createUser = async () => {
-    console.log('entrei nafunção');
-
     if (password !== passwordConfirm) {
-      alert('Verifique o campo senha')
+      alert('Verifique o campo senha');
     } else {
       await postUserAxios({
         cpf, password, name, lastname, status: 'off'
       });
       setUserConfirm(true);
+      setCpf("");
+      setPassword("");
+      setName("");
+      setLastName("");
+      setPasswordConfirm("");
     }
-  }
-
-  if (userConfirm) {
-    alert('Usuário cadastrado com sucesso!');
   }
 
 	return (
@@ -38,7 +37,7 @@ export function CreateUser() {
         <h1>RealChat</h1>
 
         <h2>Crie sua conta de usuário</h2>
-
+        {userConfirm ? <h5>Usuário cadastrado com sucesso!</h5>:<></>}
         <Input
           type="text"
           value={name}
