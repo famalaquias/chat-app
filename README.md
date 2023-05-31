@@ -60,6 +60,7 @@ ___
 
 #### 🚧 Executando o BackEnd
 
+```bash
 # Navegue até o diretório do BackEnd
 $ cd backend
 
