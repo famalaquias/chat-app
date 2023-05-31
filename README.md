@@ -50,11 +50,48 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [React Router Dom](https://reactrouter.com/en/main)
 
 
-## ⚙ API
+## ⚙ Instalação
 
-<p>
-  Clique <a href="https://github.com/famalaquias/api-lunaticnotes">aqui</a> para acessar o repositório da API do projeto LunaticNotes. 
-</p>
+Clone o projeto para o local desejado em seu computador.
+
+```bash
+$ git clone git@github.com:famalaquias/chat-app.git
+```
+
+___
+
+#### 🚧 Executando o BackEnd
+```bash
+# No BackEnd insira uma porta e um secret no arquivo .env vazio
+  AUTH_SECRET=
+  PORT=
+
+# Navegue até o diretório do BackEnd
+$ cd backend
+
+# Instale as dependências necessárias
+$ npm install
+
+# Agora inicie o servidor do BackEnd
+$ npm run dev
+```
+___
+
+#### 💻 Executando o FrontEnd
+```bash
+# Navegue até o diretório do FrontEnd
+$ cd frontend
+
+# Instale as dependências necessárias
+$ npm install
+
+# Agora inicie o servidor do FrontEnd
+$ npm run dev
+
+# O terminal irá exibir o endereço local onde a aplicação está sendo executada. Basta digitar o mesmo endereço em seu navegador preferido. O endereço usado na criação do projeto foi este:
+
+  http://localhost:3333/
+```
 
 
 ---
