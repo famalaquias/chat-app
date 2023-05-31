@@ -5,26 +5,26 @@
 
 ## :page_with_curl: Sobre
 
-Trata-se de aplicativo desenvolvido para criação de notas. Feito para quem deseja organizar suas anotações, links úteis e importantes de maneira prática e fácil.
-LunaticNotes permite ao usuário criar, editar, atualizar, incluir e excluir notas de forma rápida e com segurança, possibilitando mais organização e agilidade para o usuário.
+Trata-se de um aplicativo do tipo chat desenvolvido para conversas entre usuários em tempo real. 
+O RealChat permite que os usuários entre online quando quiser e, também, que veja os usuários que estão online em qualquer momento.
 
 
 ## :man_technologist: Habilidades Desenvolvidas
 
 #### Funcionalidades Web:
 
-- [x] Criação de contas
-- [x] Logar na conta criada
-- [x] Cadastro de notas, links e tags úteis
-- [x] Editar notas, links e tags úteis
-- [x] Excluir notas, links e tags úteis
-- [x] Editar perfil do usuário, atualizando nome, foto, email e senha
+- [x] Criação de tela de cadastro de usuário
+- [x] Criação da tela de login de usuário
+- [x] Criação de tela do chat
+- [x] O usuário só poderá acessar a tela do chat se estiver logado na aplicação
+- [x] As conversas entre os usuários são em tempo real
+- [x] Listagem dos usuários onlines
 - [x] Busca pelo nome das notas, links e tags
 
 
 #### Funcionalidades API:
 
-- [x] Dados pessoais do usuário cadastrados em um Banco de Dados
+- [x] Dados pessoais do usuário cadastrados em um Banco de Dados (MongoDB)
 - [x] Autenticação do usuário para logar na aplicação
 - [x] Interface possui sua própria API
 - [x] Middlewares de erros
@@ -41,10 +41,12 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [React.js](https://react.dev/)
 - [JavaScript](https://www.javascript.com/)
-- [Vite](https://vitejs.dev/)
+- [NodeJS](https://nodejs.org/en)
+- [MongoDB](https://www.mongodb.com/)
+- [Spcket.io](https://socket.io/)
+- [ExpressJS](http://expressjs.com/)
 - [Axios](https://axios-http.com/)
 - [Styled Components](https://styled-components.com/)
-- [React Icons](https://react-icons.github.io/react-icons/)
 - [React Router Dom](https://reactrouter.com/en/main)
 
 
