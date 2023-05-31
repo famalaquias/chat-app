@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL_BASE = 'https://localhost:3333';
+const URL_BASE = 'http://localhost:3333';
 
 const getUser = () => JSON.parse(localStorage.getItem('user'));
 const user = getUser();
@@ -18,20 +18,17 @@ export const registerAdmAxios = async (data) => {
 };
 
 export const getUserAxios = async (cpf) => {
-  const URL = `${URL_BASE}/:${cpf}`;
-
+  const URL = `${URL_BASE}/${cpf}`;
   const response = await axios.get(URL);
-
+  console.log(response);
   return response;
 };
 
 export const postUserAxios = async (data) => {
   const URL = `${URL_BASE}/register`;
-
   const response = await axios.post(URL, data);
-
   return response;
-}
+};
 
 export const getSalesAxios = async () => {
   const URL = `${URL_BASE}/sales`;

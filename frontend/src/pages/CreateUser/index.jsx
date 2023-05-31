@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { getUserAxios, postUserAxios } from '../../services/api';
+import { postUserAxios } from '../../services/api';
 
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
@@ -11,31 +11,30 @@ export function CreateUser() {
   const [cpf, setCpf] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [lastname, setLastName] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
-  const [userConfirm,  setUserConfirm] = useState("");
+  const [userConfirm,  setUserConfirm] = useState(false);
 
-  async function createUser () {
-    const user = await getUserAxios(cpf);
+  const createUser = async () => {
+    console.log('entrei nafunção');
 
-    if (cpf === user.cpf) {
-      alert('Esse CPF já está em uso.');
-    }
-
-    if (password === passwordConfirm) {
-      const newUser = { name, lastName, cpf, password, status: 'off' };
-
-      setUserConfirm(await postUserAxios(newUser));
+    if (password !== passwordConfirm) {
+      alert('Verifique o campo senha')
+    } else {
+      await postUserAxios({
+        cpf, password, name, lastname, status: 'off'
+      });
+      setUserConfirm(true);
     }
   }
 
-  if (userConfirm.length > 3) {
+  if (userConfirm) {
     alert('Usuário cadastrado com sucesso!');
   }
 
 	return (
 		<Container>
-      <Form onSubmit={createUser}>
+      <Form>
         <h1>RealChat</h1>
 
         <h2>Crie sua conta de usuário</h2>
@@ -49,7 +48,7 @@ export function CreateUser() {
 
         <Input
           type="text"
-          value={lastName}
+          value={lastname}
           placeholder="Sobrenome" 
           onChange={(e) => setLastName(e.target.value)}
         />
@@ -75,8 +74,7 @@ export function CreateUser() {
           onChange={(e) => setPasswordConfirm(e.target.value)}
         />
 
-        <Button title="Cadastrar" />
-        {/* onClick={handleSignUp} */}
+        <Button title="Cadastrar" onClick={createUser} />
 
         <a href="/">
           Voltar para o login

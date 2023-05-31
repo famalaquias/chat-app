@@ -24,7 +24,7 @@ const getAllUser = async (_req, res) => {
 
 const getOne = async (req, res) => {
   try {
-    const { cpf } = req.body;
+    const { cpf } = req.params;
     const result = await userService.getOne(cpf);
     res.status(statusHttp.OK).send(result);
   } catch (err) {

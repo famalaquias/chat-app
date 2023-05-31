@@ -2,6 +2,7 @@ const md5 = require('md5');
 const { errorsTypes } = require('../utils/errorsCatalog');
 const generateToken = require('../utils/generateToken');
 const { getUserByCPF, insertUser, getAllUsers } = require('../model/mongoDB');
+const statusHttp = require('../utils/statusHttp');
 
 const login = async ({cpf, password}) => {
   const user = await getUserByCPF(cpf);
@@ -33,7 +34,11 @@ const register = async (user) => {
 };
 
 const getOne = async (cpf) => {
-  return await getUserByCPF(cpf);
+  const result = await getUserByCPF(cpf);
+  if (result === null || result === 'null') {
+    throw new Error('CPF invalido')
+  }
+  return result;
 };
 
 const getAllUser = async () => {
