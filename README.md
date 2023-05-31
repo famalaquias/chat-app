@@ -59,10 +59,6 @@ $ git clone git@github.com:famalaquias/chat-app.git
 ___
 
 #### 🚧 Executando o BackEnd
-```bash
-# No BackEnd insira uma porta e um secret no arquivo .env vazio
-  AUTH_SECRET=
-  PORT=
 
 # Navegue até o diretório do BackEnd
 $ cd backend
