@@ -87,9 +87,9 @@ $ npm run dev
 
 # O terminal irá exibir o endereço local onde a aplicação está sendo executada. Basta digitar o mesmo endereço em seu navegador preferido. O endereço usado na criação do projeto foi este:
 
-  http://localhost:3333/
+ (Backend) http://localhost:3333/
   
-  http://localhost:5173/
+ (Frontend) http://localhost:5173/
 ```
 
 
